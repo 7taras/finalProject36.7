@@ -18,9 +18,11 @@ private:
 
     QPushButton* buttonDelete;
     QPushButton* buttonRefresh;
+    QPushButton* buttonMessages;
 
     QSqlTableModel* modelU4View;
-    int row;
+    int row = 0;
+    bool flagButtonMessages = false;
 
 public:    
     explicit MainWindow(QWidget *parent = nullptr);
@@ -29,6 +31,7 @@ public:
 private slots:
     void on_buttonDelete_clicked();
     void on_buttonRefresh_clicked();
+    void on_buttonMessages_clicked();
     void on_tableUsers_clicked(const QModelIndex &index);
 
 };
