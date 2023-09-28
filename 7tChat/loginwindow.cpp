@@ -16,7 +16,7 @@ LoginWindow::LoginWindow(QWidget *parent)
     QRegularExpression expr("[0-9a-zA-Z]{1,20}");
     validUsername = new QRegularExpressionValidator(expr, this);
     lineUsername->setValidator(validUsername);
-    lineUsername->setMaxLength(20);
+    lineUsername->setMaxLength(20);    
 
     linePassword = new QLineEdit;
     linePassword->setPlaceholderText("type your password here...");
@@ -60,14 +60,14 @@ void LoginWindow::buttonLoginPressed()
 {
     *login = lineUsername->text();
     *password = linePassword->text();
-    if(login->isEmpty())
+    if(login->length() <= 2)
     {
-        lineUsername->setPlaceholderText("TYPE USERNAME");
+        lineUsername->setPlaceholderText("USERNAME, MIN 3 SYMBOLS");
         return;
     }
-    else if(password->isEmpty())
+    else if(password->length() <= 3)
     {
-        linePassword->setPlaceholderText("TYPE PASSWORD");
+        linePassword->setPlaceholderText("PASSWORD, MIN 4 SYMBOLS");
         return;
     }
     else

@@ -23,6 +23,11 @@ public:
     // указатель на который записываем в контерйнер socketsList
     QTcpSocket* socket;
 
+    QSqlTableModel* modelUsers;
+    QSqlTableModel* modelMessages;
+
+    QSqlDatabase db;
+
 private:
     //
     QVector<QTcpSocket*> socketsList;
@@ -37,10 +42,7 @@ private:
     qint16 nextBlockSize = 0;
     qint8 messageType;
 
-    QSqlDatabase db;
     QSqlQuery* query;
-    QSqlTableModel* modelUsers;
-    QSqlTableModel* modelMessages;
 
     QVector<QString>* listUsers;
     QDateTime* tempDateTime;

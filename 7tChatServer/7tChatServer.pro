@@ -1,5 +1,7 @@
 QT += core network sql
 
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+
 # CONFIG += c++17 cmdline
 CONFIG += c++17 console
 
@@ -9,6 +11,7 @@ CONFIG += c++17 console
 
 SOURCES += \
         main.cpp \
+        mainwindow.cpp \
         server.cpp
 
 # Default rules for deployment.
@@ -17,4 +20,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
+    mainwindow.h \
     server.h
+
+FORMS +=

@@ -71,14 +71,14 @@ void RegisterWindow::buttonRegisterPressed()
     *login = lineUsername->text();
     *password = linePassword->text();
     *confirm = lineConfirm->text();
-    if(login->isEmpty())
+    if(login->length() <= 2)
     {
-        lineUsername->setPlaceholderText("TYPE USERNAME");
+        lineUsername->setPlaceholderText("USERNAME, MIN 3 SYMBOLS");
         return;
     }
-    else if(password->isEmpty())
+    else if(password->length() <= 3)
     {
-        linePassword->setPlaceholderText("TYPE PASSWORD");
+        linePassword->setPlaceholderText("PASSWORD, MIN 4 SYMBOLS");
         return;
     }
     else if(confirm->isEmpty())

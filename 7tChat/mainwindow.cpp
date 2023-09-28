@@ -6,7 +6,7 @@ MainWindow::MainWindow(QWidget *parent)
     // создаем сокет
     socket = new QTcpSocket(this);
 
-    // задаем мин размены главного окна
+    // задаем мин размеры главного окна
     this->setMinimumHeight(480);
     this->setMinimumWidth(640);
 
